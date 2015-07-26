@@ -19,7 +19,7 @@ University of Utah, Marriott Library, Apple Support's
 
 ### Platforms
 
-- Mac OS X - Mavericks (10.8) or higher
+- Mac OS X - Mountain Lion (10.8) or higher
 
 ## Usage
 
@@ -66,13 +66,13 @@ a user's personal files and settings).
 Note the `user`, `template`, and `language` flags only affect those services which use the TCC system, i.e. `contacts`, 
 `icloud`, and `accessibility`. Providing these options for Location Services will have no effect.
 
+### Examples
 
 #### Add an application to your own contacts service permissions
 
-Most web browsers will ask you for permission to look at your contacts. They can store things like your usernames 
-and passwords here, among other things. 
+Most web browsers will ask you for permission to look at your contacts. 
 
-Let's add Safari as a trusted application for your own account:
+Let's add Safari as a trusted application:
 
 ```ruby
 privacy_services_manager 'grant safari access to contacts' do
@@ -119,7 +119,7 @@ Let's say the application is called "MyApp":
 privacy_services_manager 'add MyApp to grandma's contacts permissions' do
   user 'grandma'
   service 'location'
-  applications ['maps']
+  applications ['MyApp']
   action :add
 end
 ```
@@ -140,5 +140,5 @@ Please refer to [CONTRIBUTING](https://github.com/dhoer/chef-privacy_services_ma
 
 ## License
 
-MIT - see the accompanying [LICENSE](https://github.com/dhoer/chef-privacy_services_manager/blob/master/LICENSE.md) file
-for details.
+MIT - see the accompanying [LICENSE](https://github.com/dhoer/chef-privacy_services_manager/blob/master/LICENSE.md) 
+file for details.

@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+  provider: vmware_fusion
+  customize:
+      memory: 2048
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: macosx-10.10
+    driver:
+      box: dhoer/macosx-10.10
+suites:
+  - name: privacy_services_manager_test
+    run_list:
+    - recipe[privacy_services_manager::default]
+#      - recipe[privacy_services_manager_test::setupsetup]
+#      - recipe[privacy_services_manager_test::insert]
+#      - recipe[privacy_services_manager_test::disable]
+#      - recipe[privacy_services_manager_test::enable]
+#      - recipe[privacy_services_manager_test::remove]
+    attributes:
