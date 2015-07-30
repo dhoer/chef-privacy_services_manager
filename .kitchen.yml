@@ -16,9 +16,7 @@ suites:
   - name: privacy_services_manager_test
     run_list:
     - recipe[privacy_services_manager_test::add]
-#      - recipe[privacy_services_manager_test::setupsetup]
-#      - recipe[privacy_services_manager_test::insert]
-#      - recipe[privacy_services_manager_test::disable]
-#      - recipe[privacy_services_manager_test::enable]
-#      - recipe[privacy_services_manager_test::remove]
+    - recipe[privacy_services_manager_test::disable]
+    - recipe[privacy_services_manager_test::enable]
+    - recipe[privacy_services_manager_test::remove]
     attributes:

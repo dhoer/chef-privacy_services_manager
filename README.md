@@ -1,15 +1,16 @@
-# Mac OS X Privacy Services Manager Cookbook
+# Privacy Services Manager Cookbook
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/privacy_services_manager.svg?style=flat-square)][cookbook]
 [![Build Status](http://img.shields.io/travis/dhoer/chef-privacy_services_manager.svg?style=flat-square)][travis]
-[![GitHub Issues](http://img.shields.io/github/issues/dhoer/chef-privacy_services_manager.svg?style=flat-square)][github]
+[![GitHub Issues](http://img.shields.io/github/issues/dhoer/chef-privacy_services_manager.svg?style=flat-square)]
+[github]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/privacy_services_manager
 [travis]: https://travis-ci.org/dhoer/chef-privacy_services_manager
 [github]: https://github.com/dhoer/chef-privacy_services_manager/issues
 
 
-Configures Mac OS X Accessibility, Contacts, iCloud, and Location services using 
+Configures Mac OS X Accessibility, Calendar, Contacts, iCloud, Location Services and Reminders using 
 University of Utah, Marriott Library, Apple Support's 
 [privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).
 
@@ -25,36 +26,38 @@ University of Utah, Marriott Library, Apple Support's
 
 This cookbook wraps University of Utah, Marriott Library, Apple Support's 
 [privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).  
-Please read their documentation thoroughly before using this.
+Please read their documentation thoroughly before using this cookbook.
 
 ### Actions
 
 There are four actions available:
 
-- `add` will create an entry for the specified application and enable the application for the service.
-- `enable` effectively just calls add, ensuring that the application has been added and enabled.
-- `remove` will delete the application's entry within the service. There will no longer be a record of that application therein.
-- `disable` will leave the application's record intact, but will disallow the application from utilizing the given service.
+- `add`  Creates an entry for the specified application and enable the application for the service.
+- `enable` Effectively just calls `add`, ensuring that the application has been added and enabled.
+- `remove` Deletes the application's entry within the service. There will no longer be a record of that 
+application therein.
+- `disable` Leaves the application's record intact, but will disallow the application from utilizing the 
+given service.
 
 ### Attributes
 
 - `services` There are six services that can be modified:
-  - `contacts` handles requests to access a user's address book. Many web browsers use this to store login information 
-for various websites. This service is handled on a per-user basis, so any user has the ability to modify this service 
-for themselves.
   - `accessibility` deals with behind-the-scenes systems that Apple believes require extra privileges to enable. 
 Applications that interface with your computer experience, such as BetterSnapTool or the Steam in-game overlay, 
 require access through this service. These privileges must be granted by a privileged user via sudo.
   - `calendar` is the service responsible for allowing applications to inject events into your calendar. This can be 
 used to schedule recurring events, among other things.
-  - `reminders` gives an application the ability to access your Reminders (which are usually handled manually via the 
-Reminders application).
-  - `location` manages any application that desires to report on your physical location. Apple's own Maps application 
-will request access to this, as well as web browsers once you visit a website that asks for your location (such as 
-Google Maps). 
+  - `contacts` handles requests to access a user's address book. Many web browsers use this to store login information 
+for various websites. This service is handled on a per-user basis, so any user has the ability to modify this service 
+for themselves.
   - `icloud` manages access to a user's iCloud storage and settings. Examples would be any text editing application 
 that is able to save to your iCloud, such as TextEdit or iA Writer. Because of the nature of this request (access to 
 a user's personal files and settings).
+  - `location` manages any application that desires to report on your physical location. Apple's own Maps application 
+will request access to this, as well as web browsers once you visit a website that asks for your location (such as 
+Google Maps). 
+  - `reminders` gives an application the ability to access your Reminders (which are usually handled manually via the 
+Reminders application).
 - `template`	Modify privacy services for Apple's User Template. Only applies to certain services.
 - `forceroot`	Force the script to allow the creation/modification of the root user's own TCC database file.
 - `admin`	Enable administrative override to modify services for non-bundled applications. 

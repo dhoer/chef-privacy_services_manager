@@ -1,4 +1,7 @@
 privacy_services_manager 'accessibility' do
-  applications ['com.apple.RemoteDesktopAgent']
+  service 'accessibility'
+  user 'vagrant'
+  applications ['/Applications/Safari.app']
+  admin true
   action :remove
 end
