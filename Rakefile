@@ -8,4 +8,4 @@ end
 RuboCop::RakeTask.new(:rubocop)
 FoodCritic::Rake::LintTask.new(:foodcritic)
 
-task privacy_services_manager_test: [:foodcritic, :rubocop, :spec]
+task default: [:foodcritic, :rubocop, :spec]

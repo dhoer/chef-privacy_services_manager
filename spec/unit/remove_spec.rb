@@ -10,11 +10,12 @@ describe 'privacy_services_manager_test::remove' do
   end
 
   it 'removes accessibility' do
-    expect(chef_run).to remove_privacy_services_manager('accessibility')
-      .with(applications: ['com.apple.RemoteDesktopAgent'])
+    expect(chef_run).to remove_privacy_services_manager('remove accessibility')
+      .with(applications: ['/Applications/Safari.app'])
   end
 
-  it 'executes tccutil' do
-    expect(chef_run).to run_execute('sudo /usr/sbin/tccutil.py --remove com.apple.RemoteDesktopAgent')
+  it 'removes safari' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin'\
+     ' remove accessibility /Applications/Safari.app')
   end
 end

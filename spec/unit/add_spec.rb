@@ -9,10 +9,10 @@ describe 'privacy_services_manager_test::add' do
     ).converge(described_recipe)
   end
 
-  it 'adds rdagent to accessibilty' do
-    expect(chef_run).to add_privacy_services_manager('make rdagent accessible').with(
+  it 'adds accessibilty applications' do
+    expect(chef_run).to add_privacy_services_manager('add accessibility').with(
       service: 'accessibility',
-        user: 'vagrant',
+      user: 'vagrant',
       applications: [
         '/System/Library/CoreServices/RemoteManagement/ARDAgent.app',
         '/usr/libexec/sshd-keygen-wrapper',
@@ -21,9 +21,17 @@ describe 'privacy_services_manager_test::add' do
       admin: true)
   end
 
-  it 'executes privacy_services_manager' do
+  it 'adds ardagent' do
     expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py' \
-      ' --user vagrant --log-dest /tmp/tcc-out.log --admin --forceroot --language --template' \
-      ' add accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
+      ' --user vagrant --admin add accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
+  end
+
+  it 'adds ssh keygen wrapper' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py' \
+      ' --user vagrant --admin add accessibility /usr/libexec/sshd-keygen-wrapper')
+  end
+  it 'adds safari' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py' \
+      ' --user vagrant --admin add accessibility /Applications/Safari.app')
   end
 end

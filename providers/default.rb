@@ -24,7 +24,6 @@ end
 # rubocop:enable all
 
 def privacy_services_manager_cmd(action, resource)
-  log resource
   flags = privacy_services_manager_flags(resource)
   "sudo /usr/local/bin/privacy_services_manager.py #{flags} #{action} #{resource.service}"
 end
@@ -41,7 +40,7 @@ def privacy_services_manager_exec(action, resource)
   end
 end
 
-def privacy_services_manager(action, resource)
+def privacy_services_manager_service(action, resource)
   if platform_family?('mac_os_x')
     privacy_services_manager_install
     privacy_services_manager_exec(action, resource)
@@ -52,24 +51,24 @@ end
 
 action :add do
   converge_by('privacy_services_manager add') do
-    privacy_services_manager('add', new_resource)
+    privacy_services_manager_service('add', new_resource)
   end
 end
 
 action :remove do
   converge_by('privacy_services_manager remove') do
-    privacy_services_manager('remove', new_resource)
+    privacy_services_manager_service('remove', new_resource)
   end
 end
 
 action :enable do
   converge_by('privacy_services_manager enable') do
-    privacy_services_manager('enable', new_resource)
+    privacy_services_manager_service('enable', new_resource)
   end
 end
 
 action :disable do
   converge_by('privacy_services_manager disable') do
-    privacy_services_manager('disable', new_resource)
+    privacy_services_manager_service('disable', new_resource)
   end
 end

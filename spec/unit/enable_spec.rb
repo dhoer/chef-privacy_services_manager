@@ -9,12 +9,13 @@ describe 'privacy_services_manager_test::enable' do
     ).converge(described_recipe)
   end
 
-  it 'enables accessibility' do
-    expect(chef_run).to enable_privacy_services_manager('accessibility')
-      .with(applications: ['com.apple.RemoteDesktopAgent'])
+  it 'enables accessibility applications' do
+    expect(chef_run).to enable_privacy_services_manager('enable accessibility')
+      .with(applications: ['/System/Library/CoreServices/RemoteManagement/ARDAgent.app'])
   end
 
-  it 'executes tccutil' do
-    expect(chef_run).to run_execute('sudo /usr/sbin/tccutil.py --enable com.apple.RemoteDesktopAgent')
+  it 'enables ardagent' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin' \
+    ' enable accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
   end
 end

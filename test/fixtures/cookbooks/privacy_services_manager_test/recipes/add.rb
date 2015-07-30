@@ -1,4 +1,4 @@
-privacy_services_manager 'make rdagent accessible' do
+privacy_services_manager 'add accessibility' do
   service 'accessibility'
   user 'vagrant'
   applications [

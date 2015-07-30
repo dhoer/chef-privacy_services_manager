@@ -9,12 +9,21 @@ describe 'privacy_services_manager_test::disable' do
     ).converge(described_recipe)
   end
 
-  it 'disables accessibility' do
-    expect(chef_run).to disable_privacy_services_manager('accessibility')
-      .with(applications: ['com.apple.RemoteDesktopAgent'])
+  it 'disables accessibility applications' do
+    expect(chef_run).to disable_privacy_services_manager('disable accessibility')
+      .with(applications: [
+        '/System/Library/CoreServices/RemoteManagement/ARDAgent.app',
+        '/usr/libexec/sshd-keygen-wrapper'
+      ])
   end
 
-  it 'executes tccutil' do
-    expect(chef_run).to run_execute('sudo /usr/sbin/tccutil.py --disable com.apple.RemoteDesktopAgent')
+  it 'disables ardagent' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin ' \
+    'disable accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
+  end
+
+  it 'disables ssh keygen wrapper' do
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin ' \
+    'disable accessibility /usr/libexec/sshd-keygen-wrapper')
   end
 end

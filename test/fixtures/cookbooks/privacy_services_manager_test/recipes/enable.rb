@@ -1,4 +1,4 @@
-privacy_services_manager 'accessibility' do
+privacy_services_manager 'enable accessibility' do
   service 'accessibility'
   user 'vagrant'
   applications ['/System/Library/CoreServices/RemoteManagement/ARDAgent.app']

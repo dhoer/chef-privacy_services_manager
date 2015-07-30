@@ -1,4 +1,4 @@
-privacy_services_manager 'accessibility' do
+privacy_services_manager 'disable accessibility' do
   service 'accessibility'
   user 'vagrant'
   applications [

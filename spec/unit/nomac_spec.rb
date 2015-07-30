@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'privacy_services_manager_test::insert' do
+describe 'privacy_services_manager_test::add' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new(
       platform: 'ubuntu',
@@ -10,8 +10,7 @@ describe 'privacy_services_manager_test::insert' do
   end
 
   it 'calls accessibility' do
-    expect(chef_run).to insert_privacy_services_manager('accessibility')
-      .with(applications: ['com.apple.RemoteDesktopAgent'])
+    expect(chef_run).to add_privacy_services_manager('add accessibility')
   end
 
   it 'logs warning' do
