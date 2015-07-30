@@ -72,11 +72,12 @@ Note the `user`, `template`, and `language` flags only affect those services whi
 
 Most web browsers will ask you for permission to look at your contacts. 
 
-Let's add Safari as a trusted application:
+Let's add Safari as a trusted application for vagrant user:
 
 ```ruby
 privacy_services_manager 'grant safari access to contacts' do
   service 'contacts'
+  user 'vagrant'
   applications ['com.apple.Safari']
   action :add
 end
@@ -84,8 +85,7 @@ end
 
 #### Add an application to the global location service permissions
 
-Two of the services supported by Privacy Services Manager require administrative privileges to modify: 
-Accessibility and Location Services. For this part of the walkthrough we will be adding Apple's Maps application to 
+For this part of the walkthrough we will be adding Apple's Maps application to 
 Location Services, but know that the process is the same for Accessibility.
 
 First, because Location Services is handled a bit differently under-the-hood, we have to enable the system globally. 
@@ -106,27 +106,6 @@ privacy_services_manager 'add location services for maps' do
   action :add
 end
 ```
-
-#### Add an application to another user's contacts service permissions
-
-You've just installed some great program on the computer for your grandma, and you know it's going to ask for 
-permission to leaf through her address book the first time she launches it.  You preemptively add permission for 
-this application to her contacts service.
-
-Let's say the application is called "MyApp":
-
-```ruby
-privacy_services_manager 'add MyApp to grandma's contacts permissions' do
-  user 'grandma'
-  service 'location'
-  applications ['MyApp']
-  action :add
-end
-```
-
-This should add MyApp to your grandmother's contacts permissions, preventing any issues with her launching MyApp 
-for the first time.
-
 
 ## Getting Help
 

@@ -9,9 +9,10 @@ describe 'privacy_services_manager_test::add' do
     ).converge(described_recipe)
   end
 
-  it 'adds safari to contacts' do
-    expect(chef_run).to add_privacy_services_manager('accessibility')
-      .with(applications: ['com.apple.RemoteDesktopAgent'])
+  it 'adds rdagent to accessibilty' do
+    expect(chef_run).to add_privacy_services_manager('make rdagent accessible').with(
+        service: 'accessibility',
+        applications: ['com.apple.RemoteDesktopAgent'])
   end
 
   it 'executes privacy_services_manager' do

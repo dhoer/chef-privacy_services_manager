@@ -14,10 +14,10 @@ end
 def privacy_services_manager_flags(resource)
   cmd = []
   cmd << "--user #{resource.user}" if resource.user
+  cmd << "--language #{resource.language}" if resource.language
   cmd << "--log-dest #{resource.log_dest}" if resource.log_dest
   cmd << '--admin' if resource.admin
   cmd << '--forceroot' if resource.forceroot
-  cmd << '--language' if resource.language
   cmd << '--template' if resource.template
   cmd.join(' ')
 end

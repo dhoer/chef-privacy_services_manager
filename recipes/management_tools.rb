@@ -7,6 +7,7 @@ if platform_family?('mac_os_x')
     checksum node['privacy_services_manager']['management_tools']['checksum']
     type 'pkg'
     action :install
+    not_if { ::File.exist?('/usr/local/bin/app_lookup.py') }
   end
 else
   log('Management Tools cannot be installed on this platform using this cookbook!') { level :warn }

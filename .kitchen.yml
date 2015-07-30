@@ -15,7 +15,7 @@ platforms:
 suites:
   - name: privacy_services_manager_test
     run_list:
-    - recipe[privacy_services_manager::default]
+    - recipe[privacy_services_manager_test::add]
 #      - recipe[privacy_services_manager_test::setupsetup]
 #      - recipe[privacy_services_manager_test::insert]
 #      - recipe[privacy_services_manager_test::disable]

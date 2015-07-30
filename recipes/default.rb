@@ -7,6 +7,7 @@ if platform_family?('mac_os_x')
     checksum node['privacy_services_manager']['checksum']
     type 'pkg'
     action :install
+    not_if { ::File.exist?('/usr/local/bin/privacy_services_manager.py') }
   end
 else
   log('Privacy Services Management cannot be installed on this platform using this cookbook!') { level :warn }

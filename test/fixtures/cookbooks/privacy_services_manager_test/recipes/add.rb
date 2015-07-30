@@ -1,9 +1,7 @@
-privacy_services_manager 'contacts' do
-  applications ['com.apple.RemoteDesktopAgent']
+privacy_services_manager 'make rdagent accessible' do
+  service 'accessibility'
   user 'vagrant'
-  log_dest '/tmp/tcc-out.log'
+  applications ['/System/Library/CoreServices/RemoteManagement/ARDAgent.app',
+      '/usr/libexec/sshd-keygen-wrapper']
   admin true
-  forceroot true
-  language true
-  template true
 end
