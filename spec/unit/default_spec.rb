@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe 'privacy_services_manager::default' do
-  # TODO: Check in the future to see if this works
-  # before(:each) do
-  #   allow(::File).to receive(:exists?).and_return(false)
-  # end
+  before(:each) do
+    allow(File).to receive(:exists?).and_call_original
+    allow(File).to receive(:exists?).and_return(false)
+  end
 
   let(:chef_run) do
     ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.10').converge(described_recipe)
