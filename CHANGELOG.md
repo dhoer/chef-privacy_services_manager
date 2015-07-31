@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.0.2
+
+- Fix #1 ERROR: AttributeError: 'module' object has no attribute 'abspah'
+
 ## 1.0.1
 
-- Bump privacy_services_manager from 1.6.8 to 1.6.9
+- BID not updating tccdb
 
 ## 1.0.0
 

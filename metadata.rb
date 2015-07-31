@@ -4,7 +4,7 @@ maintainer_email 'dennis.hoer@gmail.com'
 license 'MIT'
 description 'Configures Mac OS X Accessibility, Calendar, Contacts, iCloud, Location Services and Reminders'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.1'
+version '1.0.2'
 
 supports 'mac_os_x', '>= 10.8'
 

@@ -110,6 +110,27 @@ privacy_services_manager 'add location services for maps' do
 end
 ```
 
+## ChefSpec Matchers
+
+This cookbook includes a custom [ChefSpec](https://github.com/sethvargo/chefspec) matcher you can use to test your
+own cookbooks.
+
+Example Matcher Usage
+
+```ruby
+expect(chef_run).to add_privacy_services_manager('grant safari access to contacts').with(
+  service: 'contacts',
+  user: 'vagrant',
+  applications: ['com.apple.Safari'])
+```
+
+Cookbook Matchers
+
+- add_privacy_services_manager(resource_name)
+- enable_privacy_services_manager(resource_name)
+- remove_privacy_services_manager(resource_name)
+- disable_privacy_services_manager(resource_name)
+
 ## Getting Help
 
 - Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/chef-privacy_services_manager).
