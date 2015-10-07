@@ -11,6 +11,6 @@ describe 'privacy_services_manager::default' do
   end
 
   it 'installs privacy_services_manager' do
-    expect(chef_run).to install_dmg_package('Privacy Services Management [1.6.10]')
+    expect(chef_run).to install_dmg_package('Privacy Services Management [1.7.0]')
   end
 end

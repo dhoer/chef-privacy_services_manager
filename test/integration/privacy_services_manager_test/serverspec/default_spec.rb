@@ -8,6 +8,22 @@ describe 'privacy_services_manager_test' do
   when 'darwin'
     describe file('/Library/Application Support/com.apple.TCC/TCC.db') do
       it { should be_file }
+      it { should be_owned_by 'root' }
+    end
+
+    describe file('/Users/vagrant/Library/Application Support') do
+      it { should be_directory }
+      it { should be_owned_by 'vagrant' }
+    end
+
+    describe file('/Users/vagrant/Library/Application Support/com.apple.TCC') do
+      it { should be_directory }
+      it { should be_owned_by 'vagrant' }
+    end
+
+    describe file('/Users/vagrant/Library/Application Support/com.apple.TCC/TCC.db') do
+      it { should be_file }
+      it { should be_owned_by 'vagrant' }
     end
   end
 end
