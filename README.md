@@ -2,12 +2,9 @@
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/privacy_services_manager.svg?style=flat-square)][cookbook]
 [![Build Status](http://img.shields.io/travis/dhoer/chef-privacy_services_manager.svg?style=flat-square)][travis]
-[![GitHub Issues](http://img.shields.io/github/issues/dhoer/chef-privacy_services_manager.svg?style=flat-square)]
-[github]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/privacy_services_manager
 [travis]: https://travis-ci.org/dhoer/chef-privacy_services_manager
-[github]: https://github.com/dhoer/chef-privacy_services_manager/issues
 
 
 Configures Mac OS X Accessibility, Calendar, Contacts, iCloud, Location Services and Reminders using 
@@ -16,11 +13,11 @@ University of Utah, Marriott Library, Apple Support's
 
 ## Requirements
 
-- Chef 11 or higher
+- Chef 11+
 
 ### Platforms
 
-- Mac OS X - Mountain Lion (10.8) or higher
+- Mac OS X 10.8+
 
 ## Usage
 
