@@ -3,7 +3,7 @@ if platform_family?('mac_os_x')
   version = node['privacy_services_manager']['version']
   dmg_package "Privacy Services Management [#{version}]" do
     source 'https://github.com/univ-of-utah-marriott-library-apple' \
-      "/privacy_services_manager/releases/download/#{version}/Privacy.Services.Management.#{version}.dmg"
+      "/privacy_services_manager/releases/download/#{version}/Privacy_Services_Management_#{version}.dmg"
     checksum node['privacy_services_manager']['checksum']
     type 'pkg'
     action :install

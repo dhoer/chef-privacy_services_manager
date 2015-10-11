@@ -2,7 +2,7 @@
 
 ## 1.1.0
 
-- Fix #2
+- Fix #2 Users Application Support directory gets set with root permissions
 
 ## 1.0.2
 
