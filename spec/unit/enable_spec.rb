@@ -15,7 +15,7 @@ describe 'privacy_services_manager_test::enable' do
   end
 
   it 'enables ardagent' do
-    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin' \
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --no-check-bin' \
     ' enable accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
   end
 end

@@ -6,5 +6,5 @@ privacy_services_manager 'add accessibility' do
     '/usr/libexec/sshd-keygen-wrapper',
     '/Applications/Safari.app'
   ]
-  admin true
+  no_check_bin true
 end

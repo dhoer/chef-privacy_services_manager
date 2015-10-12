@@ -16,7 +16,7 @@ def privacy_services_manager_flags(resource)
   cmd << "--user #{resource.user}" if resource.user
   cmd << "--language #{resource.language}" if resource.language
   cmd << "--log-dest #{resource.log_dest}" if resource.log_dest
-  cmd << '--admin' if resource.admin
+  cmd << '--no-check-bin' if resource.admin || resource.no_check_bin
   cmd << '--forceroot' if resource.forceroot
   cmd << '--template' if resource.template
   cmd.join(' ')

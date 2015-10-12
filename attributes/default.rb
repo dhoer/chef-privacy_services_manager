@@ -1,5 +1,6 @@
-default['privacy_services_manager']['version'] = '1.6.10'
-default['privacy_services_manager']['checksum'] = 'ec1390143c66dedc6ec42a0a49050196493af74a2fdcbb70eb34b8660a9b1342'
+default['privacy_services_manager']['version'] = '1.7.2'
+default['privacy_services_manager']['checksum'] =
+  '0d7a5e7431d5a44d7b1ddcc8e59fa3672d573a9203c45b620daee695444de040'
 
 default['privacy_services_manager']['management_tools']['version'] = '1.8.1'
 default['privacy_services_manager']['management_tools']['checksum'] =
