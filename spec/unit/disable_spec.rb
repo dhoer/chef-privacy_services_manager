@@ -18,12 +18,12 @@ describe 'privacy_services_manager_test::disable' do
   end
 
   it 'disables ardagent' do
-    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin ' \
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --no-check-bin ' \
     'disable accessibility /System/Library/CoreServices/RemoteManagement/ARDAgent.app')
   end
 
   it 'disables ssh keygen wrapper' do
-    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --admin ' \
+    expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py --user vagrant --no-check-bin ' \
     'disable accessibility /usr/libexec/sshd-keygen-wrapper')
   end
 end

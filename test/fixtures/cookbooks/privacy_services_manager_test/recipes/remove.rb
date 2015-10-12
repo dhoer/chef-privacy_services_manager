@@ -2,6 +2,6 @@ privacy_services_manager 'remove accessibility' do
   service 'accessibility'
   user 'vagrant'
   applications ['/Applications/Safari.app']
-  admin true
+  no_check_bin true
   action :remove
 end

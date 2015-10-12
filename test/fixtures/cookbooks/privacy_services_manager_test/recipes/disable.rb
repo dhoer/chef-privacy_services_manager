@@ -5,6 +5,6 @@ privacy_services_manager 'disable accessibility' do
     '/System/Library/CoreServices/RemoteManagement/ARDAgent.app',
     '/usr/libexec/sshd-keygen-wrapper'
   ]
-  admin true
+  no_check_bin true
   action :disable
 end

@@ -57,7 +57,7 @@ Google Maps).
 Reminders application).
 - `template`	Modify privacy services for Apple's User Template. Only applies to certain services.
 - `forceroot`	Force the script to allow the creation/modification of the root user's own TCC database file.
-- `admin`	Enable administrative override to modify services for non-bundled applications. 
+- `no_check_bin`	Enable administrative override for binaries.
 - `log_dest` Redirect logging to the specified file.
 - `user` Modify privacy services for a specific user named "user". 
 - `language` 	When changing privacy services for the Apple's User Template, modify the lang template. 
