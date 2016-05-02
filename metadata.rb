@@ -9,3 +9,6 @@ version '1.1.0'
 supports 'mac_os_x', '>= 10.8'
 
 depends 'dmg', '~> 2.2'
+
+source_url 'https://github.com/dhoer/chef-privacy_services_manager' if respond_to?(:source_url)
+issues_url 'https://github.com/dhoer/chef-privacy_services_manager/issues' if respond_to?(:issues_url)
