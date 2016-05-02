@@ -1,0 +1,21 @@
+# Usage: KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen list
+---
+driver:
+  name: localhost
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: macosx-10
+
+suites:
+  - name: privacy_services_manager_test
+    run_list:
+    - recipe[privacy_services_manager_test::add]
+    - recipe[privacy_services_manager_test::disable]
+    - recipe[privacy_services_manager_test::enable]
+    - recipe[privacy_services_manager_test::remove]
+    attributes:
+      privacy_services_manager_test:
+        user: 'travis'

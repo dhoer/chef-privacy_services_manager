@@ -8,8 +8,7 @@
 
 
 Configures Mac OS X Accessibility, Calendar, Contacts, iCloud, Location Services and Reminders using 
-University of Utah, Marriott Library, Apple Support's 
-[privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).
+[univ-of-utah-marriott-library-apple/privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).
 
 ## Requirements
 
@@ -21,8 +20,8 @@ University of Utah, Marriott Library, Apple Support's
 
 ## Usage
 
-This cookbook wraps University of Utah, Marriott Library, Apple Support's 
-[privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).  
+This cookbook wraps 
+[univ-of-utah-marriott-library-apple/privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).  
 Please read their documentation thoroughly before using this cookbook.
 
 ### Actions
