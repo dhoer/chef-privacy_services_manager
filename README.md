@@ -21,8 +21,8 @@ Configures Mac OS X Accessibility, Calendar, Contacts, iCloud, Location Services
 ## Usage
 
 This cookbook wraps 
-[univ-of-utah-marriott-library-apple/privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager).  
-Please read their documentation thoroughly before using this cookbook.
+[univ-of-utah-marriott-library-apple/privacy_services_manager](https://github.com/univ-of-utah-marriott-library-apple/privacy_services_manager). Please 
+read their documentation thoroughly before using this cookbook.
 
 ### Actions
 
