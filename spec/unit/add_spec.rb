@@ -18,7 +18,8 @@ describe 'privacy_services_manager_test::add' do
         '/usr/libexec/sshd-keygen-wrapper',
         '/Applications/Safari.app'
       ],
-      no_check_bin: true)
+      no_check_bin: true
+    )
   end
 
   it 'adds ardagent' do

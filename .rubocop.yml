@@ -5,3 +5,6 @@ AllCops:
 LineLength:
   Enabled: true
   Max: 120
+
+Metrics/BlockLength:
+  Enabled: false
