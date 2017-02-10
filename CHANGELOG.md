@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 
+
+- Relax dmg cookbook constraint
+
 ## 1.1.0
 
 - Fix #3 Updates to the administrative override
