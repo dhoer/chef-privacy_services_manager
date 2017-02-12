@@ -31,6 +31,7 @@ describe 'privacy_services_manager_test::add' do
     expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py' \
       ' --user vagrant --no-check-bin add accessibility /usr/libexec/sshd-keygen-wrapper')
   end
+
   it 'adds safari' do
     expect(chef_run).to run_execute('sudo /usr/local/bin/privacy_services_manager.py' \
       ' --user vagrant --no-check-bin add accessibility /Applications/Safari.app')
