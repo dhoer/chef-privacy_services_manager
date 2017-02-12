@@ -21,22 +21,6 @@ def privacy_services_manager_flags(resource)
   cmd << '--template' if resource.template
   cmd.join(' ')
 end
-
-def hack_for_xcode8x
-  execute 'hack_for_xcode8x' do
-    command <<-EOF
-sudo /usr/bin/killall -9 cfprefsd
-sudo /usr/bin/killall -9 locationd
-sudo launchctl unload /System/Library/LaunchDaemons/com.apple.locationd.plist
-sudo /usr/libexec/PlistBuddy -c \
-"Set :com.apple.locationd.bundle-/System/Library/PrivateFrameworks/AssistantServices.framework:Authorized true" \
-/var/db/locationd/clients.plist
-sudo launchctl load /System/Library/LaunchDaemons/com.apple.locationd.plist
-    EOF
-    only_if { node['platform_version'].include?('10.12') }
-  end
-end
-
 # rubocop:enable all
 
 def privacy_services_manager_cmd(action, resource)
@@ -58,7 +42,6 @@ end
 
 def privacy_services_manager_service(action, resource)
   if platform_family?('mac_os_x')
-    hack_for_xcode8x
     privacy_services_manager_install
     privacy_services_manager_exec(action, resource)
   else
