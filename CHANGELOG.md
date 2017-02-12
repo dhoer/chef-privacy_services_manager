@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Restrict dmg to 2.x 
+
 ## 1.1.1 
 
 - Relax dmg cookbook constraint
