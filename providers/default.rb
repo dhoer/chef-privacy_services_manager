@@ -23,17 +23,17 @@ def privacy_services_manager_flags(resource)
 end
 
 def hack_for_xcode8x
-  Chef::Log.warn("**********Platform version: #{node['platform_version']}")
-  return unless node['platform_version'].include?('10.12')
-
   execute 'hack_for_xcode8x' do
     command <<-EOF
+sudo /usr/bin/killall -9 cfprefsd
+sudo /usr/bin/killall -9 locationd
 sudo launchctl unload /System/Library/LaunchDaemons/com.apple.locationd.plist
 sudo /usr/libexec/PlistBuddy -c \
 "Set :com.apple.locationd.bundle-/System/Library/PrivateFrameworks/AssistantServices.framework:Authorized true" \
 /var/db/locationd/clients.plist
 sudo launchctl load /System/Library/LaunchDaemons/com.apple.locationd.plist
     EOF
+    only_if { node['platform_version'].include?('10.12') }
   end
 end
 
