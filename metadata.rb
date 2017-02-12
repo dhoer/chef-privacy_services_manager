@@ -10,7 +10,7 @@ chef_version '>= 11'
 
 supports 'mac_os_x', '>= 10.8'
 
-depends 'dmg'
+depends 'dmg', '~> 2.2'
 
 source_url 'https://github.com/dhoer/chef-privacy_services_manager' if respond_to?(:source_url)
 issues_url 'https://github.com/dhoer/chef-privacy_services_manager/issues' if respond_to?(:issues_url)
