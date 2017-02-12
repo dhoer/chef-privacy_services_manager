@@ -1,7 +1,7 @@
 if platform_family?('mac_os_x')
   include_recipe 'privacy_services_manager::management_tools'
   version = node['privacy_services_manager']['version']
-  dmg_package "Privacy Services Management [#{version}]" do
+  dmg_package "Privacy_Services_Management_#{version}" do
     source 'https://github.com/univ-of-utah-marriott-library-apple' \
       "/privacy_services_manager/releases/download/#{version}/Privacy_Services_Management_#{version}.dmg"
     checksum node['privacy_services_manager']['checksum']

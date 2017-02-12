@@ -6,6 +6,6 @@ describe 'privacy_services_manager::management_tools' do
   end
 
   it 'installs management_tools' do
-    expect(chef_run).to install_dmg_package('Management Tools [1.8.1]')
+    expect(chef_run).to install_dmg_package('Management_Tools_1.8.1')
   end
 end
